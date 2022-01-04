@@ -9,11 +9,11 @@ export class Sync<T extends HasId> {
 
   constructor(public url: string) {}
 
-  fetch(id: number): AxiosPromise {
+  fetch = (id: number): AxiosPromise => {
     return axios.get(`${this.url}/${id}`)
   }
 
-  save(data: T): AxiosPromise {
+  save = (data: T): AxiosPromise => {
     const id = data?.id
     // if user id exist, just update user
     return id
