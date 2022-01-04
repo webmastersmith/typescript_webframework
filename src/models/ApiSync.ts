@@ -1,13 +1,11 @@
 import axios, { AxiosPromise } from 'axios'
-import { UserProps } from './User'
 
 interface HasId {
   id?: number
 }
-export class Sync<T extends HasId> {
-  // url: string = 'http://localhost:3000/users'
-
+export class ApiSync<T extends HasId> {
   constructor(public url: string) {}
+  // url: string = 'http://localhost:3000/users'
 
   fetch = (id: number): AxiosPromise => {
     return axios.get(`${this.url}/${id}`)
