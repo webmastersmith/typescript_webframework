@@ -97,5 +97,5 @@ lerna-debug.log
 Thumbs.db
 
 # custom
-avoid
+avoid.*
 .cache
