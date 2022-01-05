@@ -40,6 +40,7 @@ export class Model<T extends HasId> {
     this.attributes.set(update)
     this.events.trigger('change')
   }
+
   fetch = (): void => {
     const id = this.get('id')
     if (typeof id !== 'number')
@@ -49,6 +50,7 @@ export class Model<T extends HasId> {
       this.set(res.data)
     })
   }
+
   save = (): void => {
     const data = this.attributes.getAll()
     this.sync
