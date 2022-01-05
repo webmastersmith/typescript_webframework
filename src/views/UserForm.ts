@@ -5,7 +5,9 @@ export class UserForm {
 
   onSetNameClick = (): void => {
     // console.log('updateName')
-    const name = this.parent.querySelector('input').value
+    const input = this.parent.querySelector('input')
+    if (!input) return
+    const name = input.value
     this.model.set({ name })
     this.render()
     console.log(this.model)
