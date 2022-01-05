@@ -14,7 +14,7 @@ export class Collection<T, K> {
     return this.events.trigger
   }
 
-  fetch(): void {
+  fetch = (): void => {
     axios.get(this.rootUrl).then((res: AxiosResponse): void => {
       res.data.forEach((value: K): void => {
         this.models.push(this.deserialize(value))

@@ -36,11 +36,11 @@ export class Model<T extends HasId> {
   }
 
   // these have dual needs
-  set(update: T): void {
+  set = (update: T): void => {
     this.attributes.set(update)
     this.events.trigger('change')
   }
-  fetch(): void {
+  fetch = (): void => {
     const id = this.get('id')
     if (typeof id !== 'number')
       throw new Error('Cannot fetch user without proper id.')
@@ -49,7 +49,7 @@ export class Model<T extends HasId> {
       this.set(res.data)
     })
   }
-  save(): void {
+  save = (): void => {
     const data = this.attributes.getAll()
     this.sync
       .save(data)

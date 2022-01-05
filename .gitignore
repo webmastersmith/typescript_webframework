@@ -98,4 +98,5 @@ Thumbs.db
 
 # custom
 avoid.*
+/avoid
 .cache
